@@ -2,9 +2,12 @@
 # Artifactory encrypts secrets using AES/CBC/PKCS5Padding and stores them in base58 encoding
 # https://jfrog.com/knowledge-base/what-are-the-artifactory-key-master-key-and-what-are-they-used-for/
 import re
+# https://pypi.org/project/base58/
 import base58
 import argparse
-from Cryptodome.Cipher import AES
+# from Cryptodome.Cipher import AES
+# https://pycryptodome.readthedocs.io/en/latest/src/cipher/aes.html
+from Crypto.Cipher import AES
 
 
 # OUTPUT #######################################################################

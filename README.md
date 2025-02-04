@@ -3,9 +3,12 @@ Artifactory secret decryption tool
 
 Artifactory stores secrets encrypted on the disk. It may need these passwords to e.g. authenticate to another repository. They are encrypted using AES/CBC/PKCS5Padding.
 
-This tool provides a portable way of decrypting these secrets offline, without using the API:
+This tool provides a portable way of decrypting these secrets offline, without using the Decrypt API.
+
+Prerequisites:
+- pip install base58 pycryptodome
 ```
-usage: artifactory_decrypt_secret.py [-h] [-k ARTIFACTORY_KEY_FILE] [-m MASTER_KEY_FILE] [-o OUTPUT_FILE] [artifactory_config_file]
+usage: python artifactory_decrypt_secret.py [-h] [-k ARTIFACTORY_KEY_FILE] [-m MASTER_KEY_FILE] [-o OUTPUT_FILE] [artifactory_config_file]
 
 positional arguments:
   artifactory_config_file
@@ -16,7 +19,14 @@ optional arguments:
   -m MASTER_KEY_FILE, --master-key-file MASTER_KEY_FILE
   -o OUTPUT_FILE, --output-file OUTPUT_FILE
 ```
-
+Example:
+```
+python artifactory_decrypt_secret.py -m masterkey
+```
+It will go in a endless loop asking for:
+```
+Secret to decrypt:
+```
 
 Decryption key
 --------------
