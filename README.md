@@ -3,7 +3,7 @@ Artifactory secret decryption tool
 
 Artifactory stores secrets encrypted on the disk. It may need these passwords to e.g. authenticate to another repository. They are encrypted using AES/CBC/PKCS5Padding.
 
-This tool provides a portable way of decrypting these secrets offline, without using the Decrypt API.
+This tool provides a portable way of decrypting these secrets offline, without using the `api/system/decrypt` i.e [Deactivate Artifactory Key Encryption](https://jfrog.com/help/r/jfrog-rest-apis/deactivate-artifactory-key-encryption) API.
 
 Prerequisites:
 - pip install base58 pycryptodome
